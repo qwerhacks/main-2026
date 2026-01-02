@@ -11,12 +11,17 @@
 	let searchTerm = '';
 	let filteredOptions: string[] = [];
 
+	// Sync searchTerm with value when value changes externally (e.g. from parent binding)
+	$: if (value && value !== searchTerm) {
+		searchTerm = value;
+	}
+
 	$: {
 		if (searchTerm === '') {
-			filteredOptions = options;
+			filteredOptions = options || [];
 		} else {
-			filteredOptions = options.filter((option) =>
-				option.toLowerCase().includes(searchTerm.toLowerCase())
+			filteredOptions = (options || []).filter((option) =>
+				option && option.toLowerCase().includes(searchTerm.toLowerCase())
 			);
 		}
 	}
@@ -30,6 +35,7 @@
 	function handleInput(event: Event) {
 		const target = event.target as HTMLInputElement;
 		searchTerm = target.value;
+		value = searchTerm; // Update parent binding immediately
 		isOpen = true;
 	}
 

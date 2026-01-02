@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Postcard from './postcard.svelte';
+	import Application from './application.svelte';
 </script>
 
 <div
 	class="flex flex-col justify-center items-center gap-8 p-10 md:p-14 rounded-xl w-max lg:w-[60%] max-w-[95vw] md:max-w-[70vw]"
 >
-	<Postcard />
+	<Application />
 </div>
 
 <!-- <div

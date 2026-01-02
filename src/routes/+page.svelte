@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Background from '$lib/components/background.svelte';
 	import Hero from '$lib/components/hero.svelte';
-	import Postcard from '$lib/components/postcard.svelte';
+	import Application from '$lib/components/application.svelte';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -28,7 +28,7 @@
 		</p>
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
-		<Postcard />
+		<Application />
 	</div>
 	<footer class="footer w-full text-center pb-10 z-20 relative">
 		Read the
