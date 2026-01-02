@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="w-full h-full relative overflow-hidden" style="background: linear-gradient(90deg, #2c539e 0%, #b8e9c0 100%);">
+<div class="w-full h-full relative overflow-hidden" style="background: linear-gradient(90deg, #143072 0%, #b8e9c0 100%);">
 	{#each stars as star}
 		<div
 			class="star {star.type}"

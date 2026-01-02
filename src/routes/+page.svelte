@@ -2,6 +2,11 @@
 	import Background from '$lib/components/background.svelte';
 	import Hero from '$lib/components/hero.svelte';
 	import Application from '$lib/components/application.svelte';
+	import About from '$lib/components/about.svelte';
+	import Sponsors from '$lib/components/sponsors.svelte';
+	import Navbar from '$lib/components/navbar.svelte';
+
+	let activeTab: 'application' | 'about' | 'sponsors' = 'application';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -19,7 +24,10 @@
 	<div id="background" class="fixed w-full h-full -z-10">
 		<Background />
 	</div>
-	<div class="w-full max-w-none h-auto py-20 flex flex-col items-center justify-center z-20 relative px-4">
+	<div class="sticky top-0 z-50 w-full">
+		<Navbar bind:activeTab />
+	</div>
+	<div class="w-full max-w-none h-auto pt-10 pb-10 flex flex-col items-center justify-center z-20 relative px-4">
 		<h1 class="text-6xl md:text-8xl text-white font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Milonga', serif;">
 			✨QWER Hacks✨
 		</h1>
@@ -28,7 +36,17 @@
 		</p>
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
-		<Application />
+		{#if activeTab === 'application'}
+			<Application />
+		{:else if activeTab === 'about'}
+			<div class="w-full px-4">
+				<About />
+			</div>
+		{:else if activeTab === 'sponsors'}
+			<div class="w-full px-4">
+				<Sponsors />
+			</div>
+		{/if}
 	</div>
 	<footer class="footer w-full text-center pb-10 z-20 relative">
 		Read the
