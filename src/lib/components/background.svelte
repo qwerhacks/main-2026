@@ -16,7 +16,7 @@
 				type = 'emoji-sparkle';
 			}
 
-			let size = Math.random() * (Math.random() > 0.8 ? 20 : 8) + 2;
+			let size = Math.random() * (Math.random() > 0.8 ? 10 : 8) + 2;
 			// Make emojis slightly larger so they are visible
 			if (type === 'emoji-sparkle') {
 				size = Math.random() * 15 + 10;

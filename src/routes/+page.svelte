@@ -4,9 +4,10 @@
 	import Application from '$lib/components/application.svelte';
 	import About from '$lib/components/about.svelte';
 	import Sponsors from '$lib/components/sponsors.svelte';
+	import Rsvp from '$lib/components/rsvp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 
-	let activeTab: 'application' | 'about' | 'sponsors' = 'application';
+	let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'rsvp';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -28,16 +29,30 @@
 		<Navbar bind:activeTab />
 	</div>
 	<div class="w-full max-w-none h-auto pt-10 pb-10 flex flex-col items-center justify-center z-20 relative px-4">
-		<h1 class="text-6xl md:text-8xl text-white font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Milonga', serif;">
+		<h1 class="text-6xl sm:text-6xl md:text-8xl text-white font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center break-words max-w-full" style="font-family: 'Milonga', serif;">
 			✨QWER Hacks✨
 		</h1>
-		<p class="text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
+		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
 			UCLA | Feb 7-8, 2026
 		</p>
+		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
+			• • • • • • •
+		</p>
+		<a 
+			href="https://docs.google.com/forms/d/e/1FAIpQLSfWmQDnkrIx32-oQlLF6Y4ucjvX7JUtfnNSwMgA0Xt-7M9mAQ/viewform"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-2xl sm:text-3xl md:text-4xl text-white font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:text-[#FCDF98] hover:drop-shadow-[0_0_15px_rgba(252,223,152,0.6)] cursor-pointer text-center block no-underline" 
+			style="font-family: 'Milonga', serif;"
+		>
+			✨Apply Now✨
+		</a>
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
 		{#if activeTab === 'application'}
 			<Application />
+		{:else if activeTab === 'rsvp'}
+			<Rsvp />
 		{:else if activeTab === 'about'}
 			<div class="w-full px-4">
 				<About />
@@ -49,7 +64,6 @@
 		{/if}
 	</div>
 	<footer class="footer w-full text-center pb-10 z-20 relative">
-		Read the
 		<a
 			href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
 			target="_blank"
@@ -58,7 +72,7 @@
 		>
 			MLH Code of Conduct
 		</a>
-		here.
+		| Made with ˚ʚ♡ɞ˚ by the QWER Hacks organizing team!
 	</footer>
 </div>
 
@@ -94,6 +108,7 @@
 	}
 
 	a.footer-link:hover {
-		color: #ccccff;
+		color: #fef08a;
 	}
+	
 </style>
