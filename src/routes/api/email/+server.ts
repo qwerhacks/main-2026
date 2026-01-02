@@ -1,7 +1,8 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestEvent } from "./$types";
-import { SCRIPTS_API } from '$env/static/private';
+// import { SCRIPTS_API } from '$env/static/private';
 
+/*
 export async function POST({ request }: RequestEvent): Promise<Response> {
   console.log("Processing POST request");
 
@@ -56,3 +57,4 @@ export async function POST({ request }: RequestEvent): Promise<Response> {
     throw error(500, "Internal server error");
   }
 }
+*/
