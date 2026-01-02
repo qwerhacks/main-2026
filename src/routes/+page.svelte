@@ -35,17 +35,14 @@
 		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
 			UCLA | Feb 7-8, 2026
 		</p>
-		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
-			• • • • • • •
-		</p>
 		<a 
 			href="https://docs.google.com/forms/d/e/1FAIpQLSfWmQDnkrIx32-oQlLF6Y4ucjvX7JUtfnNSwMgA0Xt-7M9mAQ/viewform"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-2xl sm:text-3xl md:text-4xl text-white font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:text-[#FCDF98] hover:drop-shadow-[0_0_15px_rgba(252,223,152,0.6)] cursor-pointer text-center block no-underline" 
-			style="font-family: 'Milonga', serif;"
+			class="inline-block mt-6 px-8 py-3 bg-[#C5A059] text-white font-bold text-xl sm:text-2xl uppercase tracking-wider rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#b08d4d] hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] cursor-pointer text-center no-underline" 
+			style="font-family: 'Ranille Normal', serif;"
 		>
-			✨Apply Now✨
+			Apply Now
 		</a>
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">

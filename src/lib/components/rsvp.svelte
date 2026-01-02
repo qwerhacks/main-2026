@@ -213,12 +213,18 @@
 							</div>
 
 							<!-- Submit -->
-							<div class="w-full flex justify-center items-center mt-6 mb-6">
+							<div class="w-full flex flex-col justify-center items-center mt-6 mb-6">
 								{#if !loading}
 									<button type="submit" class="submit-btn rubik-submit">Submit RSVP</button>
 								{:else}
 									<div class="lds-ripple"><div></div><div></div></div>
 								{/if}
+								<br>
+								<p class="spectral italic text-xs text-gray-500 mt-4 text-center max-w-[80%]">
+									This site is protected by reCAPTCHA and the Google
+									<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#2c539e]">Privacy Policy</a> and
+									<a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#2c539e]">Terms of Service</a> apply.
+								</p>
 							</div>
 
 							{#if error}
