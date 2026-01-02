@@ -4,36 +4,19 @@
 	import { onMount } from 'svelte';
 	import Alaska from '$lib/media/Alaska.svg';
 	import QWER from '$lib/media/qwerhacks_LA.svg';
-	import PostcardFront from '$lib/media/postcard_front.svg';
-	import Back from '$lib/media/postcard back.svg';
 	import Standout from '$lib/media/stand-out-stickers-logo.png';
 	import SearchableDropdown from './SearchableDropdown.svelte';
 	import schoolsCsv from '$lib/media/schools.csv?raw';
 	import countriesCsv from '$lib/media/slim-2.csv?raw';
 	// import { SCRIPTS_API } from '$env/static/private';
 
-	let isFlipped = false;
 	let isLoaded = false;
-	// Function to toggle the flip state
-	function toggleFlip() {
-		isFlipped = true;
-	}
 
 	onMount(() => {
 		setTimeout(() => {
 			isLoaded = true;
 		}, 300);
-		if (typeof window !== 'undefined') {
-			window.addEventListener('keydown', toggleFlip);
-		} // Delay to start the animation
-		return () => {
-			// Clean up the event listener when the component is destroyed
-			if (typeof window !== 'undefined') {
-				window.removeEventListener('keydown', toggleFlip);
-			}
-		};
 	});
-	// window.addEventListener('keydown', toggleFlip);
 	//Email portion
 	import Arrow from '$lib/media/arrow.svg';
 	import { Circle2, Circle } from 'svelte-loading-spinners';
@@ -261,31 +244,15 @@
 	}
 </script>
 
-<div class="container sm: -mt-96" on:click={toggleFlip} on:keydown={toggleFlip}>
+<div class="container">
 	{#if true}
-		<div class="card {isLoaded ? 'slide-in' : 'slide-out'} {isFlipped ? 'flipped' : ''}">
+		<div class="scroll-paper {isLoaded ? 'slide-in' : 'slide-out'}">
 			<div
-				class="front"
-				aria-label="front of postcard. click or press on any key to flip card to the back!"
-			>
-				<img src={PostcardFront} alt="postcard front " />
-				<div class="overlay-text tentang-nanti">Applications out now! Click me!</div>
-			</div>
-			<div
-				class="back cardback"
-				aria-label="back of postcard. fill in your information here to register."
+				class="scroll-content"
+				aria-label="RSVP form. fill in your information here to register."
 			>
 				<!-- <img src={Back} alt="postcard back" /> -->
 				<div class="postcard">
-					<!-- Left side: Address and message -->
-					<div class="left">
-						<img src={Stamp} class="stamp relative" alt="stamp" />
-						<div class="pad" />
-						<div class="welcome input-field tentang-nanti">Register here for more updates!</div>
-						<div class="address spectral">Date: Jan 2026</div>
-						<div class="address spectral">Addr: UCLA, CA 90024</div>
-					</div>
-					<div class="center" />
 					<!-- Right side: Sign-up form -->
 					<div class="right">
 						<!-- <img
@@ -297,7 +264,9 @@
 						<form on:submit|preventDefault={submitHandler}>
 							{#if error === undefined && !success}
 								<div class="input-group flex-col flex">
-									<label class="input-label rubik purple">RSVP Form</label>
+									<label class="input-label rubik purple"
+										><span style="font-size: 1.5em;">RSVP Form</span></label
+									>
 									<!-- <a class="spectral italic w-full" href="https://tinyurl.com/qwerhacks25"
 										>Apply at this link!</a
 									> -->
@@ -506,7 +475,7 @@
 											type="submit"
 											id="submit"
 											class="px-2 py-2"
-											style="background:#fbf8f2"
+											style="background:#fdfbf7"
 										/>
 										<div class="lds-ripple">
 											<div />
@@ -542,18 +511,6 @@
 			caused.
 		</p>
 	{/if}
-	<footer class="footer">
-		Read the
-		<a
-			href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="footer-link"
-		>
-			MLH Code of Conduct
-		</a>
-		here.
-	</footer>
 </div>
 
 <style>
@@ -562,17 +519,6 @@
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
-	}
-
-	body {
-		height: 100vh;
-		overflow: hidden;
-		background: linear-gradient(45deg, #061de3, #e306ca);
-		font-family: Helvetica, sans-serif;
-		color: rgb(211, 211, 211);
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.container {
@@ -588,132 +534,114 @@
 		/* Target small screens like phones */
 		.container {
 			width: 90%;
-			margin-top: -50%;
 		}
 		.overlay-text {
 			font-size: 12px;
 		}
 		.rubik {
-			font-size: 7px;
+			font-size: 9px;
 		}
 		.input-field {
 			font-size: 9px;
 		}
 		.address {
-			font-size: 6px;
+			font-size: 8px;
 		}
 		.rubik-submit {
-			font-size: 6px;
+			font-size: 8px;
 		}
 		.checkbox-label {
-			font-size: 6px;
+			font-size: 8px;
 		}
 	}
 	@media (min-width: 400px) {
 		/* Target small screens like phones */
 		.container {
-			margin-top: -30%;
 			width: 80%;
 		}
 		.overlay-text {
 			font-size: 17px;
 		}
 		.rubik {
-			font-size: 8px;
+			font-size: 10px;
 		}
 		.input-field {
 			font-size: 10px;
 		}
 		.address {
-			font-size: 7px;
+			font-size: 9px;
 		}
 		.rubik-submit {
-			font-size: 6px;
+			font-size: 8px;
 		}
 		.checkbox-label {
-			font-size: 7px;
+			font-size: 9px;
 		}
 	}
 	@media (min-width: 500px) {
 		/* Target small screens like phones */
 		.container {
-			margin-top: -10%;
 			width: 70%;
 		}
 		.overlay-text {
 			font-size: 22px;
 		}
 		.rubik {
-			font-size: 8px;
+			font-size: 10px;
 		}
 		.rubik-submit {
-			font-size: 8px;
+			font-size: 10px;
 		}
 		.input-field {
-			font-size: 13px;
+			font-size: 10px;
 		}
 		.checkbox-label {
-			font-size: 8px;
+			font-size: 10px;
 		}
 	}
 	@media (min-width: 585px) {
 		.container {
-			margin-top: -2%; /* Adjust for large screens */
 			width: 68%; /* Narrower width */
 		}
 		.overlay-text {
 			font-size: 26px;
 		}
 		.rubik {
-			font-size: 10px;
+			font-size: 12px;
+		}
+		.input-field {
+			font-size: 12px;
 		}
 		.address {
-			font-size: 9px;
+			font-size: 11px;
 		}
 		.checkbox-label {
-			font-size: 10px;
+			font-size: 12px;
 		}
 	}
 	@media (min-width: 768px) {
 		.container {
-			margin-top: -6%; /* Adjust for large screens */
 			width: 60%; /* Narrower width */
 		}
 		.overlay-text {
 			font-size: 26px;
 		}
 		.rubik-submit {
-			font-size: 12px;
+			font-size: 14px;
 		}
 		.rubik {
-			font-size: 11px;
+			font-size: 13px;
+		}
+		.input-field {
+			font-size: 13px;
 		}
 		.checkbox-label {
-			font-size: 10px;
+			font-size: 12px;
 		}
 	}
 	/* Extra-large screens (min-width: 1200px) */
 	@media (min-width: 900px) {
 		.container {
-			margin-top: 3%; /* Adjust for extra-large screens */
-			width: 45%; /* Narrow width for big screens */
-		}
-		.overlay-text {
-			font-size: 27px;
-		}
-		.rubik-submit {
-			font-size: 12px;
-		}
-		.rubik {
-			font-size: 15px;
-		}
-		.checkbox-label {
-			font-size: 10px;
-		}
-	}
-	@media (min-width: 1200px) {
-		.container {
-			margin-top: 3%; /* Adjust for extra-large screens */
 			width: 45%; /* Narrow width for big screens */
 		}
 		.overlay-text {
@@ -723,15 +651,37 @@
 			font-size: 14px;
 		}
 		.rubik {
-			font-size: 15px;
+			font-size: 17px;
+		}
+		.input-field {
+			font-size: 17px;
 		}
 		.checkbox-label {
 			font-size: 12px;
 		}
 	}
+	@media (min-width: 1200px) {
+		.container {
+			width: 45%; /* Narrow width for big screens */
+		}
+		.overlay-text {
+			font-size: 27px;
+		}
+		.rubik-submit {
+			font-size: 16px;
+		}
+		.rubik {
+			font-size: 17px;
+		}
+		.input-field {
+			font-size: 17px;
+		}
+		.checkbox-label {
+			font-size: 14px;
+		}
+	}
 	@media (min-width: 1500px) {
 		.container {
-			margin-top: 3%; /* Adjust for extra-large screens */
 			width: 45%; /* Narrow width for big screens */
 		}
 		.overlay-text {
@@ -739,18 +689,20 @@
 		}
 		.rubik-submit {
 			margin-top: 10px;
-			font-size: 16px;
+			font-size: 18px;
 		}
 		.rubik {
-			font-size: 17px;
+			font-size: 19px;
+		}
+		.input-field {
+			font-size: 19px;
 		}
 		.checkbox-label {
-			font-size: 13px;
+			font-size: 15px;
 		}
 	}
 	@media (min-width: 1800px) {
 		.container {
-			margin-top: 3%; /* Adjust for extra-large screens */
 			width: 45%; /* Narrow width for big screens */
 		}
 		.overlay-text {
@@ -758,13 +710,16 @@
 		}
 		.rubik-submit {
 			margin-top: 20px;
-			font-size: 18px;
+			font-size: 20px;
 		}
 		.rubik {
-			font-size: 23px;
+			font-size: 25px;
+		}
+		.input-field {
+			font-size: 25px;
 		}
 		.checkbox-label {
-			font-size: 15px;
+			font-size: 17px;
 		}
 	}
 	/* .container {
@@ -781,19 +736,19 @@
 		}
 		.rubik-submit {
 			margin-top: 20px;
-			font-size: 1.5vw;
+			font-size: 1.8vw;
 		}
 		.rubik {
-			font-size: 1.6vw;
+			font-size: 1.9vw;
 		}
 		.checkbox-label {
-			font-size: 1.3vw;
+			font-size: 1.6vw;
 		}
 		.input-field {
-			font-size: 1.5vw;
+			font-size: 1.9vw;
 		}
 		.address {
-			font-size: 1.4vw;
+			font-size: 1.7vw;
 		}
 	}
 
@@ -820,63 +775,70 @@
 		border-radius: 5px;
 		rotate: 10deg;
 	}
-	.flipped {
-		transform: rotateY(180deg);
-	}
 	.slide-in {
 		/* Starting state for sliding in */
 		top: 100vh; /* Start off-screen */
 		animation: slideIn 1s forwards; /* Optional: using keyframes */
 	}
 
-	.card.slide-out {
+	.scroll-paper.slide-out {
 		top: 100vh; /* Keep it outside the viewport */
 	}
 
-	.card {
+	.scroll-paper {
 		height: 100%;
 		width: 100%;
 		position: relative;
-		transition: transform 1500ms ease, top 500ms ease;
-		transform-style: preserve-3d;
+		transition: top 500ms ease;
 		top: 100vh;
+		background-color: #fdfbf7;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		margin: 20px 0;
+	}
+
+	.scroll-paper::before {
+		content: '';
+		position: absolute;
+		top: -20px;
+		left: -5%;
+		width: 110%;
+		height: 40px;
+		background: linear-gradient(to bottom, #d4c5a9 0%, #fdfbf7 50%, #d4c5a9 100%);
+		border-radius: 20px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+		z-index: 10;
+	}
+
+	.scroll-paper::after {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		left: -5%;
+		width: 110%;
+		height: 40px;
+		background: linear-gradient(to bottom, #d4c5a9 0%, #fdfbf7 50%, #d4c5a9 100%);
+		border-radius: 20px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+		z-index: 10;
 	}
 	@keyframes slideIn {
 		from {
 			top: 100vh; /* Start off-screen */
 		}
 		to {
-			top: -25%; /* Move to the center */
+			top: 0; /* Move to the center */
 		}
 	}
 
-	.front,
-	.back {
+	.scroll-content {
 		height: 100%;
 		width: 100%;
-		border-radius: 1rem;
-		box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
-		position: absolute;
-		backface-visibility: hidden;
-		overflow: hidden;
-	}
-
-	.back {
-		background-color: #f5ffff;
-		transform: rotateY(180deg);
+		padding: 2rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		gap: 5rem;
-	}
-	.cardback {
-		display: flex;
-		justify-content: space-between;
-		padding: 2rem;
-		/* background-color: #f9fbfa; */
-		/* border-radius: 15px; */
-		/* border: 1px solid #e0e0e0; */
+		overflow: hidden;
 	}
 
 	.email-form {
@@ -886,10 +848,6 @@
 		display: flex;
 		/* flex-direction: column; */
 	}
-	.stamp {
-		height: 25%;
-		width: 50%;
-	}
 	input::placeholder,
 	.spectral {
 		text-align: left;
@@ -897,29 +855,12 @@
 		font-weight: 400;
 		/* color: #9ca3a3; */
 	}
-	.spectral.welcome,
-	.spectral.address {
-		text-align: left;
-		font-family: 'Spectral', serif;
-		font-weight: 400;
-		color: #000000;
-	}
 	.italic {
 		font-style: italic;
 	}
 
-	.left {
-		width: 27.5%;
-	}
-	.center {
-		/* width: 10%; */
-		width: 0.5px;
-		height: auto; /* The height of the vertical line */
-		background-color: rgba(0, 0, 0, 0.3); /* Faint line color */
-		margin: 0 20px;
-	}
 	.right {
-		width: 62.5%;
+		width: 100%;
 		height: 100%; /* Ensure both the left and right sides take up equal space */
 		overflow-y: auto; /* Enable vertical scrolling */
 		max-height: 100%; /* Ensure it doesn't exceed the container height */
@@ -932,17 +873,17 @@
 	}
 
 	.right::-webkit-scrollbar-track {
-		background: #f5ffff;
+		background: #fdfbf7;
 		border-radius: 3px;
 	}
 
 	.right::-webkit-scrollbar-thumb {
-		background: #474580;
+		background: #2c539e;
 		border-radius: 3px;
 	}
 
 	.right::-webkit-scrollbar-thumb:hover {
-		background: #2e008b;
+		background: #1e3c78;
 	}
 
 	/* Ensure form takes full width */
@@ -963,7 +904,7 @@
 
 	input,
 	button {
-		background-color: #f5ffff;
+		background-color: #fdfbf7;
 		outline: solid 0.5px #abb2b2;
 	}
 	input {
@@ -988,7 +929,7 @@
 	}
 	.submit-btn {
 		display: inline-block;
-		background-color: #3d00b7; /* Purple color */
+		background-color: #2c539e; /* Purple color */
 		color: white;
 		font-weight: bold;
 		border: none;
@@ -1001,54 +942,36 @@
 	}
 
 	.submit-btn:hover {
-		background-color: #2a0082; /* Darken the button on hover */
+		background-color: #1e3c78; /* Darken the button on hover */
 		transform: scale(1.05); /* Slightly increase size on hover */
 	}
 
 	.submit-btn:active {
-		background-color: #1e005e; /* Darker on click */
+		background-color: #152a55; /* Darker on click */
 		transform: scale(0.98); /* Shrink slightly on click */
 	}
 
 	.postcard {
 		display: flex;
 		justify-content: space-between;
-		background-color: #f5ffff;
+		background-color: #fdfbf7;
 		height: 95%;
 	}
 
-	@font-face {
-		font-family: 'Tentang Nanti';
-		src: url('$lib/fonts/TNanti-Demo.otf') format('truetype'); /* Update the path as necessary */
-		font-weight: normal;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Rubik';
-		src: url('$lib/fonts/Rubik-Mono-One-Regular.ttf.woff') format('truetype'); /* Update the path as necessary */
-		font-weight: normal;
-		font-style: normal;
-	}
-	.tentang-nanti {
-		font-family: 'Tentang Nanti';
-	}
 	.rubik {
-		font-family: 'Rubik';
+		font-family: 'Ranille Normal', serif;
 		/* font-size: 15px; */
 	}
 	.rubik-submit {
-		font-family: 'Rubik';
+		font-family: 'Ranille Normal', serif;
 		/* font-size: 12px; */
 	}
 	.rubik.purple {
-		color: #474580;
+		color: #2c539e;
 	}
 	/* .input-field {
 		font-size: 13px;
 	} */
-	.pad {
-		height: 10%;
-	}
 	.checkbox-container {
 		display: flex;
 		align-items: center;
@@ -1059,7 +982,7 @@
 		appearance: none; /* Removes default checkbox styling */
 		width: 13px;
 		height: 13px;
-		border: 2px solid #474580; /* Custom border color */
+		border: 2px solid #2c539e; /* Custom border color */
 		border-radius: 4px;
 		position: relative;
 		cursor: pointer;
@@ -1067,8 +990,8 @@
 	}
 
 	.checkbox-input:checked {
-		background-color: #474580;
-		border-color: #474580;
+		background-color: #2c539e;
+		border-color: #2c539e;
 	}
 
 	.checkbox-input:checked::before {
@@ -1085,16 +1008,16 @@
 		margin-left: 10px;
 		color: #535a5a;
 		cursor: pointer; /* Makes the label clickable */
-		font-family: 'Spectral', serif;
+		font-family: 'Ranille Normal', serif;
 	}
 
 	.checkbox-input:focus {
-		outline: 2px solid #474580;
+		outline: 2px solid #2c539e;
 		outline-offset: 2px;
 	}
 
 	.checkbox-input:hover {
-		border-color: #2e008b; /* Darker shade on hover */
+		border-color: #1e3c78; /* Darker shade on hover */
 	}
 
 	/* MLH Agreement styling */
@@ -1111,13 +1034,13 @@
 	}
 
 	.link-text {
-		color: #3d00b7; /* Purple color for links */
+		color: #2c539e; /* Purple color for links */
 		text-decoration: underline;
 		cursor: pointer;
 	}
 
 	.link-text:hover {
-		color: #2a0082; /* Darker purple on hover */
+		color: #1e3c78; /* Darker purple on hover */
 	}
 
 	/* loading spinner */
@@ -1134,7 +1057,7 @@
 	}
 	.lds-ripple div {
 		position: absolute;
-		border: 4px solid #3d00b7;
+		border: 4px solid #2c539e;
 		opacity: 1;
 		border-radius: 50%;
 		animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -1171,28 +1094,5 @@
 			height: 80px;
 			opacity: 0;
 		}
-	}
-
-	footer.footer {
-		position: fixed;
-		bottom: 1rem;
-		left: 0;
-		width: 100%;
-		/*background-color: rgba(0, 0, 0, 0.6);  semi-transparent dark */
-		color: #ffffff;
-		text-align: center;
-		padding: 0.5rem 0;
-		z-index: 999;
-		font-family: 'Spectral', serif;
-		font-size: 0.9rem;
-	}
-
-	a.footer-link {
-		color: #ffffff;
-		text-decoration: underline;
-	}
-
-	a.footer-link:hover {
-		color: #ccccff;
 	}
 </style>
