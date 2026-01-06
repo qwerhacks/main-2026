@@ -64,12 +64,12 @@
     {#if isMenuOpen}
         <div class="md:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
             <button 
-            class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
-            on:click={() => setTab('application')}
-        >
-            Application
-        <!--</button>
-            <button 
+                class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
+                on:click={() => setTab('application')}
+            >
+                Application
+            </button>
+            <!--<button 
                 class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
                 on:click={() => setTab('rsvp')}
             >
