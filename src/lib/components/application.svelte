@@ -283,7 +283,7 @@
 			console.log(`${pair[0]}: ${pair[1]}`);
 		}
 
-		console.log('📦 Sending to Google Form');
+		console.log('Sending to Google Form');
 
 		try {
 			await fetch(GOOGLE_FORM_URL, {
@@ -293,9 +293,9 @@
 			});
 
 			success = true;
-			console.log('✅ Form submitted successfully (no-cors mode)');
+			console.log('Form submitted successfully (no-cors mode)');
 		} catch (err) {
-			console.error('💥 Network error:', err);
+			console.error('Network error:', err);
 			error = err instanceof Error ? err.message : 'Unknown error';
 		} finally {
 			loading = false;

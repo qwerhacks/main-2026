@@ -2,12 +2,13 @@
 	import Background from '$lib/components/background.svelte';
 	import Hero from '$lib/components/hero.svelte';
 	import Application from '$lib/components/application.svelte';
+	import ApplicationDirectEmbed from '$lib/components/application_direct_embed.svelte';
 	import About from '$lib/components/about.svelte';
 	import Sponsors from '$lib/components/sponsors.svelte';
 	import Rsvp from '$lib/components/rsvp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 
-	let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'rsvp';
+	let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'application';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -35,7 +36,7 @@
 		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
 			UCLA | Feb 7-8, 2026
 		</p>
-		<a 
+		<!--<a 
 			href="https://docs.google.com/forms/d/e/1FAIpQLSfWmQDnkrIx32-oQlLF6Y4ucjvX7JUtfnNSwMgA0Xt-7M9mAQ/viewform"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -43,11 +44,11 @@
 			style="font-family: 'Ranille Normal', serif;"
 		>
 			Apply Now
-		</a>
+		</a>-->
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
 		{#if activeTab === 'application'}
-			<Application />
+			<ApplicationDirectEmbed />
 		{:else if activeTab === 'rsvp'}
 			<Rsvp />
 		{:else if activeTab === 'about'}

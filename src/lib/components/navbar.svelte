@@ -2,7 +2,7 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'rsvp';
+    export let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'application';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
@@ -17,18 +17,18 @@
 <nav class="w-full z-20 relative backdrop-blur-md bg-black/20 border-b border-white/10">
     <!-- Desktop Menu -->
     <div class="hidden md:flex justify-center items-center gap-4 py-4 px-8">
-        <!--<button 
+        <button 
             class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
             on:click={() => setTab('application')}
         >
             Application
-        </button>-->
-        <button 
+        </button>
+        <!--<button 
             class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
             on:click={() => setTab('rsvp')}
         >
             RSVP
-        </button>
+        </button>-->
         <button 
             class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
             on:click={() => setTab('about')}
@@ -64,11 +64,17 @@
     {#if isMenuOpen}
         <div class="md:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
             <button 
+            class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
+            on:click={() => setTab('application')}
+        >
+            Application
+        <!--</button>
+            <button 
                 class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
                 on:click={() => setTab('rsvp')}
             >
                 RSVP
-            </button>
+            </button>-->
             <button 
                 class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
                 on:click={() => setTab('about')}
