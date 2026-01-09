@@ -2,12 +2,12 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'application';
+    export let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' = 'application';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
 
-    function setTab(tab: 'application' | 'about' | 'sponsors' | 'rsvp') {
+    function setTab(tab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp') {
         activeTab = tab;
         dispatch('change', tab);
         isMenuOpen = false;
@@ -34,6 +34,12 @@
             on:click={() => setTab('about')}
         >
             About
+        </button>
+        <button 
+            class="nav-btn {activeTab === 'info' ? 'active' : ''}" 
+            on:click={() => setTab('info')}
+        >
+            Info
         </button>
         <button 
             class="nav-btn {activeTab === 'sponsors' ? 'active' : ''}" 
@@ -80,6 +86,12 @@
                 on:click={() => setTab('about')}
             >
                 About
+            </button>
+            <button 
+                class="nav-btn {activeTab === 'info' ? 'active' : ''}" 
+                on:click={() => setTab('info')}
+            >
+                Info
             </button>
             <button 
                 class="nav-btn {activeTab === 'sponsors' ? 'active' : ''}" 

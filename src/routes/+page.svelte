@@ -4,11 +4,12 @@
 	import Application from '$lib/components/application.svelte';
 	import ApplicationDirectEmbed from '$lib/components/application_direct_embed.svelte';
 	import About from '$lib/components/about.svelte';
+	import Info from '$lib/components/info.svelte';
 	import Sponsors from '$lib/components/sponsors.svelte';
 	import Rsvp from '$lib/components/rsvp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 
-	let activeTab: 'application' | 'about' | 'sponsors' | 'rsvp' = 'application';
+	let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' = 'application';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -54,6 +55,10 @@
 		{:else if activeTab === 'about'}
 			<div class="w-full px-4">
 				<About />
+			</div>
+		{:else if activeTab === 'info'}
+			<div class="w-full px-4">
+				<Info setTab={(tab) => (activeTab = tab)} />
 			</div>
 		{:else if activeTab === 'sponsors'}
 			<div class="w-full px-4">
