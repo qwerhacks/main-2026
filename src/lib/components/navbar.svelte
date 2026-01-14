@@ -2,12 +2,12 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' = 'application';
+    export let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
 
-    function setTab(tab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp') {
+    function setTab(tab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
         activeTab = tab;
         dispatch('change', tab);
         isMenuOpen = false;
@@ -40,6 +40,12 @@
             on:click={() => setTab('info')}
         >
             Info
+        </button>
+        <button 
+            class="nav-btn {activeTab === 'theme-and-tracks' ? 'active' : ''}" 
+            on:click={() => setTab('theme-and-tracks')}
+        >
+            Theme & Tracks
         </button>
         <button 
             class="nav-btn {activeTab === 'sponsors' ? 'active' : ''}" 
@@ -92,6 +98,12 @@
                 on:click={() => setTab('info')}
             >
                 Info
+            </button>
+            <button 
+                class="nav-btn {activeTab === 'theme-and-tracks' ? 'active' : ''}" 
+                on:click={() => setTab('theme-and-tracks')}
+            >
+                Theme & Tracks
             </button>
             <button 
                 class="nav-btn {activeTab === 'sponsors' ? 'active' : ''}" 

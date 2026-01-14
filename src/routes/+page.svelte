@@ -8,8 +8,9 @@
 	import Sponsors from '$lib/components/sponsors.svelte';
 	import Rsvp from '$lib/components/rsvp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
+	import ThemeAndTracks from '$lib/components/theme-and-tracks.svelte';
 
-	let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' = 'application';
+	let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -59,6 +60,10 @@
 		{:else if activeTab === 'info'}
 			<div class="w-full px-4">
 				<Info setTab={(tab) => (activeTab = tab)} />
+			</div>
+		{:else if activeTab === 'theme-and-tracks'}
+			<div class="w-full px-4">
+				<ThemeAndTracks />
 			</div>
 		{:else if activeTab === 'sponsors'}
 			<div class="w-full px-4">
