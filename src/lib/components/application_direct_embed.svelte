@@ -1,5 +1,5 @@
 <section class="flex flex-col items-center w-full gap-4" aria-label="Application Form Section">
-	<p class="text-white font-serif text-center text-lg z-20 pl-8 pr-8" style="font-family: 'Spectral', serif; 0 0 10px rgba(197, 160, 89, 0.5);">
+	<p class="text-white font-serif text-center text-lg z-20 pl-10 pr-10 pb-8" style="font-family: 'Spectral', serif; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);">
 		Having trouble viewing the form? <a 
 			href="https://docs.google.com/forms/d/e/1FAIpQLSfWmQDnkrIx32-oQlLF6Y4ucjvX7JUtfnNSwMgA0Xt-7M9mAQ/viewform?fbzx=-4915715637413356676" 
 			target="_blank" 
