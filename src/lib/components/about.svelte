@@ -1,5 +1,5 @@
-<div class="about-container p-8 max-w-4xl mx-auto text-white">
-	<h1 class="text-4xl md:text-6xl mb-6 text-center" style="font-family: 'Ranille Normal', serif; color: #C5A059; text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);">
+<section class="about-container p-8 max-w-4xl mx-auto text-white" aria-labelledby="about-title">
+	<h1 id="about-title" class="text-4xl md:text-6xl mb-6 text-center" style="font-family: 'Ranille Normal', serif; color: #C5A059; text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);">
 		Who We Are
 	</h1>
 	
@@ -36,9 +36,9 @@
 	</p>
 	
 	<p class="text-xl font-bold text-center mt-12" style="font-family: 'Spectral', serif;">
-		We’re here, we’re QWER, and can’t wait to see you!
+		<strong>We’re here, we’re QWER, and can’t wait to see you!</strong>
 	</p>
-</div>
+</section>
 
 <style>
 	.about-container {

@@ -5,9 +5,10 @@
 <div class="space-y-20 py-16 px-4">
 
 	<!-- SECTION 1: HERO STATEMENT -->
-	<section class="max-w-5xl mx-auto text-center">
+	<section class="max-w-5xl mx-auto text-center" aria-labelledby="info-hero-title">
 		<div class="glass-card p-10">
 			<h1
+				id="info-hero-title"
 				class="text-4xl md:text-6xl mb-6"
 				style="
 					font-family: 'Ranille Normal', serif;
@@ -35,7 +36,7 @@
 	</section>
 
 	<!-- SECTION 2: STAGGERED VALUES -->
-	<section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+	<section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8" aria-label="Our Values">
 		<div class="glass-card p-8 md:translate-y-6">
 			<h2 class="card-title">Impact</h2>
 			<p class="card-text">
@@ -59,9 +60,10 @@
 	</section>
 
 	<!-- SECTION 3: WHAT DOES THAT MEAN -->
-	<section class="max-w-5xl mx-auto">
+	<section class="max-w-5xl mx-auto" aria-labelledby="info-meaning-title">
 		<div class="glass-card p-10">
 			<h2
+				id="info-meaning-title"
 				class="text-3xl md:text-4xl mb-6"
 				style="font-family: 'Ranille Normal', serif;"
 			>
@@ -92,9 +94,10 @@
 	</section>
 
 	<!-- SECTION 4: CTA -->
-	<section class="max-w-4xl mx-auto text-center">
+	<section class="max-w-4xl mx-auto text-center" aria-labelledby="info-cta-title">
 		<div class="glass-card p-12">
 			<h2
+				id="info-cta-title"
 				class="text-3xl md:text-4xl mb-4"
 				style="font-family: 'Ranille Normal', serif;"
 			>
@@ -108,13 +111,14 @@
 				First hackathon or hundredth — if you’re curious, kind, and ready to learn, there’s a place for you here.
 			</p>
 
-			<a
-				class="apply-button inline-block px-14 py-4 text-xl rounded-full"
+			<button
+				type="button"
+				class="apply-button inline-block px-14 py-4 text-xl rounded-full cursor-pointer"
 	            on:click={() => setTab('application')}
 				style="font-family: 'Spectral', serif;"
 			>
 				Apply Now
-			</a>
+			</button>
 		</div>
 	</section>
 

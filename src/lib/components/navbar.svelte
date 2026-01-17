@@ -14,42 +14,48 @@
     }
 </script>
 
-<nav class="w-full z-20 relative backdrop-blur-md bg-black/20 border-b border-white/10">
+<nav class="w-full z-20 relative backdrop-blur-md bg-black/20 border-b border-white/10" aria-label="Main Navigation">
     <!-- Desktop Menu -->
     <div class="hidden md:flex justify-center items-center gap-4 py-4 px-8">
         <button 
             class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
             on:click={() => setTab('application')}
+            aria-current={activeTab === 'application' ? 'page' : undefined}
         >
             Application
         </button>
         <!--<button 
             class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
             on:click={() => setTab('rsvp')}
+            aria-current={activeTab === 'rsvp' ? 'page' : undefined}
         >
             RSVP
         </button>-->
         <button 
             class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
             on:click={() => setTab('about')}
+            aria-current={activeTab === 'about' ? 'page' : undefined}
         >
             About
         </button>
         <button 
             class="nav-btn {activeTab === 'info' ? 'active' : ''}" 
             on:click={() => setTab('info')}
+            aria-current={activeTab === 'info' ? 'page' : undefined}
         >
             Info and FAQ
         </button>
         <button 
             class="nav-btn {activeTab === 'theme-and-tracks' ? 'active' : ''}" 
             on:click={() => setTab('theme-and-tracks')}
+            aria-current={activeTab === 'theme-and-tracks' ? 'page' : undefined}
         >
             Theme & Tracks
         </button>
         <button 
             class="nav-btn {activeTab === 'sponsors' ? 'active' : ''}" 
             on:click={() => setTab('sponsors')}
+            aria-current={activeTab === 'sponsors' ? 'page' : undefined}
         >
             Sponsors
         </button>
@@ -60,9 +66,11 @@
         <button 
             class="text-white focus:outline-none hover:text-[#C5A059] transition-colors" 
             on:click={() => isMenuOpen = !isMenuOpen}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
         >
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 {#if isMenuOpen}
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 {:else}
@@ -74,40 +82,46 @@
 
     <!-- Mobile Dropdown -->
     {#if isMenuOpen}
-        <div class="md:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
+        <div id="mobile-menu" class="md:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
             <button 
                 class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
                 on:click={() => setTab('application')}
+                aria-current={activeTab === 'application' ? 'page' : undefined}
             >
                 Application
             </button>
             <!--<button 
                 class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
                 on:click={() => setTab('rsvp')}
+                aria-current={activeTab === 'rsvp' ? 'page' : undefined}
             >
                 RSVP
             </button>-->
             <button 
                 class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
                 on:click={() => setTab('about')}
+                aria-current={activeTab === 'about' ? 'page' : undefined}
             >
                 About
             </button>
             <button 
                 class="nav-btn {activeTab === 'info' ? 'active' : ''}" 
                 on:click={() => setTab('info')}
+                aria-current={activeTab === 'info' ? 'page' : undefined}
             >
                 Info and FAQ
             </button>
             <button 
                 class="nav-btn {activeTab === 'theme-and-tracks' ? 'active' : ''}" 
                 on:click={() => setTab('theme-and-tracks')}
+                aria-current={activeTab === 'theme-and-tracks' ? 'page' : undefined}
             >
                 Theme & Tracks
             </button>
             <button 
                 class="nav-btn {activeTab === 'sponsors' ? 'active' : ''}" 
                 on:click={() => setTab('sponsors')}
+                aria-current={activeTab === 'sponsors' ? 'page' : undefined}
             >
                 Sponsors
             </button>

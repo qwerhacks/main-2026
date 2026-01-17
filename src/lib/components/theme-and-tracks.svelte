@@ -94,7 +94,7 @@
 	</div>
 
 	<!-- THEME SECTION -->
-	<section class="max-w-5xl mx-auto relative">
+	<section class="max-w-5xl mx-auto relative" aria-labelledby="theme-title">
 		<div class="theme-card p-10 md:p-12 relative overflow-hidden">
 			<!-- Animated border gradient -->
 			<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-green-400 to-blue-400 opacity-20 blur-xl animate-gradient-rotate"></div>
@@ -102,7 +102,7 @@
 			
 			<div class="relative z-10">
 				<div class="text-center mb-8">
-					<h1 class="theme-title text-4xl md:text-6xl mb-6">
+					<h1 id="theme-title" class="theme-title text-4xl md:text-6xl mb-6">
 						Theme
 					</h1>
 				</div>
@@ -119,9 +119,9 @@
 	</section>
 
 	<!-- TRACKS SECTION -->
-	<section class="max-w-6xl mx-auto relative" style="background: transparent;">
+	<section class="max-w-6xl mx-auto relative" style="background: transparent;" aria-labelledby="tracks-title">
 		<div class="text-center mb-12">
-			<h1 class="tracks-title text-4xl md:text-6xl mb-4">
+			<h1 id="tracks-title" class="tracks-title text-4xl md:text-6xl mb-4">
 				Tracks
 			</h1>
 			<p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90" style="font-family: 'Spectral', serif;">
@@ -193,14 +193,14 @@
 	</section>
 
 	<!-- CTA SECTION -->
-	<section class="max-w-4xl mx-auto text-center relative">
+	<section class="max-w-4xl mx-auto text-center relative" aria-labelledby="cta-title">
 		<div class="cta-card p-12 relative overflow-hidden">
 			<!-- Animated gradient border -->
 			<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-green-400 to-blue-400 opacity-30 blur-xl animate-gradient-rotate"></div>
 			<div class="absolute inset-[2px] rounded-2xl bg-black/20 backdrop-blur-xl"></div>
 			
 			<div class="relative z-10">
-				<h2 class="cta-title text-3xl md:text-4xl mb-4">
+				<h2 id="cta-title" class="cta-title text-3xl md:text-4xl mb-4">
 					Ready to Build Across Time?
 				</h2>
 

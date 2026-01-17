@@ -2,11 +2,12 @@
 	import Application from './application.svelte';
 </script>
 
-<div
+<section
 	class="flex flex-col justify-center items-center gap-8 p-10 md:p-14 rounded-xl w-max lg:w-[60%] max-w-[95vw] md:max-w-[70vw]"
+	aria-label="Hero Section"
 >
 	<Application />
-</div>
+</section>
 
 <!-- <div
 	class="mt-auto max-w-prose text-center py-5 px-5 text-white font-reactor7 text-2xl lg:text-3xl"
