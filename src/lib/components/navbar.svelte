@@ -39,7 +39,7 @@
             class="nav-btn {activeTab === 'info' ? 'active' : ''}" 
             on:click={() => setTab('info')}
         >
-            Info
+            Info and FAQ
         </button>
         <button 
             class="nav-btn {activeTab === 'theme-and-tracks' ? 'active' : ''}" 
@@ -97,7 +97,7 @@
                 class="nav-btn {activeTab === 'info' ? 'active' : ''}" 
                 on:click={() => setTab('info')}
             >
-                Info
+                Info and FAQ
             </button>
             <button 
                 class="nav-btn {activeTab === 'theme-and-tracks' ? 'active' : ''}" 

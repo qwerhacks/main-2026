@@ -17,6 +17,20 @@
 				class="w-full h-auto max-h-24"
 			/>
 		</a>
+
+		<!-- David Bohnett Foundation -->
+		<a 
+			href="https://www.bohnettfoundation.org/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-full sm:w-1/2 md:w-1/4 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+		>
+			<img 
+				src="https://uc5afa142a2390389f20cc6a4022.previews.dropboxusercontent.com/p/thumb/AC7TIO2qMEK_WNdvxDfPlvGcM0wTb2Yl6q0_OmsZVrzHwadwSMBcV7WoLWiqFie5PFPawWP-oEDz6KKPi39e_iqhnwh2zf1vC5wLst3JUo2XLnCcsADmgg6JaeqNrDHvLSOwivIFNnBzPfgTe90K2bdm1J-ThKx070xQE0zR3nOofAgFR9c3Oyffs3VrRxPHgml0UtbjXTVukJ4KBWKfduKNY89yfPq-py6M3R9c56eOjj_FiUOpEQUduWBFyk9VrXu0Bsym2S5L2wlKojG7SoMtvqmbXnZjACgRcraZ3B18oRvTmGzVEhOjY8Fe8WoMGy5JupktHAOXlkAW5VW5TFIh/p.png" 
+				alt="David Bohnett Foundation" 
+				class="w-full h-auto max-h-24"
+			/>
+		</a>
 	</div>
 
 	<p class="text-lg text-center mt-12" style="font-family: 'Spectral', serif;">

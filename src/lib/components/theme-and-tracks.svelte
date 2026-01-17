@@ -84,7 +84,7 @@
 	];
 </script>
 
-<div class="space-y-20 py-16 px-4" style="background: transparent !important;">
+<div class="space-y-12 py-0 px-4" style="background: transparent !important;">
 	<!-- Animated gradient background -->
 	<div class="fixed inset-0 -z-10 pointer-events-none">
 		<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-yellow-500/10 via-green-500/10 to-blue-500/10 animate-gradient-shift"></div>
@@ -157,7 +157,7 @@
 							</p>
 							<ul class="space-y-2.5 mb-6">
 								{#each track.motivation as item}
-									<li class="text-sm flex items-start gap-2.5 text-white/85">
+									<li class="text-sm flex items-start gap-2.5 text-white">
 										<span class="bullet-point mt-1.5 flex-shrink-0" style="color: {track.accentColor};">
 											<svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
 												<circle cx="3" cy="3" r="3"/>
@@ -175,7 +175,7 @@
 							</p>
 							<ul class="space-y-2.5">
 								{#each track.projectIdeas as idea}
-									<li class="text-sm flex items-start gap-2.5 text-white/85">
+									<li class="text-sm flex items-start gap-2.5 text-white">
 										<span class="bullet-point mt-1.5 flex-shrink-0" style="color: {track.accentColor};">
 											<svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
 												<circle cx="3" cy="3" r="3"/>
