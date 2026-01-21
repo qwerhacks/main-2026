@@ -7,11 +7,11 @@
 	import AllisonChengImg from './assets/AllisonCheng.jpg';
 	import ChelseaChenImg from './assets/ChelseaChen.jpg';
 	import PriyankaSanthoshImg from './assets/Priyanka Santhosh.jpg';
-	import JasmineWongphatarakulImg from './assets/JasmineWongphatarakul.JPG';
+	import JasmineWongphatarakulImg from './assets/JasmineWongphatarakul.jpg';
 	import KatieWangImg from './assets/KatieWang.jpg';
 	import SophieBarrowmanImg from './assets/Sophie Barrowman.jpg';
-	import KatieChungImg from './assets/KatieChung.JPG';
-	import MaxCabilanganImg from './assets/MaxCabilangan.JPG';
+	import KatieChungImg from './assets/KatieChung.jpg';
+	import MaxCabilanganImg from './assets/MaxCabilangan.jpg';
 	import DogImg from './assets/dog.png';
 </script>
 
