@@ -1,4 +1,5 @@
 <script lang="ts">
+	// fixed file extensions
 	import NikitaImg from './assets/Nikita.jpg';
 	import AruushiKaurImg from './assets/AruushiKaur.jpeg';
 	import LoreleiTangImg from './assets/LoreleiTang.jpg';
