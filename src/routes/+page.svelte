@@ -3,6 +3,7 @@
 	import Hero from '$lib/components/hero.svelte';
 	import Application from '$lib/components/application.svelte';
 	import ApplicationDirectEmbed from '$lib/components/application_direct_embed.svelte';
+	import VolunteerFormEmbed from '$lib/components/volunteer_form_embed.svelte';
 	import About from '$lib/components/about.svelte';
 	import Info from '$lib/components/info.svelte';
 	import Sponsors from '$lib/components/sponsors.svelte';
@@ -10,7 +11,7 @@
 	import Navbar from '$lib/components/navbar.svelte';
 	import ThemeAndTracks from '$lib/components/theme-and-tracks.svelte';
 
-	let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+	let activeTab: 'application' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -51,6 +52,8 @@
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
 		{#if activeTab === 'application'}
 			<ApplicationDirectEmbed />
+		{:else if activeTab === 'volunteer'}
+			<VolunteerFormEmbed />
 		{:else if activeTab === 'rsvp'}
 			<Rsvp />
 		{:else if activeTab === 'about'}

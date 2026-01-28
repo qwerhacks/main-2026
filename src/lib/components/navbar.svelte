@@ -2,12 +2,12 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+    export let activeTab: 'application' |'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
 
-    function setTab(tab: 'application' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
+    function setTab(tab: 'application' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
         activeTab = tab;
         dispatch('change', tab);
         isMenuOpen = false;
@@ -16,7 +16,7 @@
 
 <nav class="w-full z-20 relative backdrop-blur-md bg-black/20 border-b border-white/10" aria-label="Main Navigation">
     <!-- Desktop Menu -->
-    <div class="hidden md:flex justify-center items-center gap-4 py-4 px-8">
+    <div class="hidden xl:flex justify-center items-center gap-4 py-4 px-8">
         <button 
             class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
             on:click={() => setTab('application')}
@@ -31,6 +31,13 @@
         >
             RSVP
         </button>-->
+        <button
+            class="nav-btn {activeTab === 'volunteer' ? 'active' : ''}" 
+            on:click={() => setTab('volunteer')}
+            aria-current={activeTab === 'volunteer' ? 'page' : undefined}
+        >
+            Volunteer
+        </button>
         <button 
             class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
             on:click={() => setTab('about')}
@@ -62,7 +69,7 @@
     </div>
 
     <!-- Mobile Menu Header -->
-    <div class="md:hidden flex justify-between items-center py-4 px-6">
+    <div class="xl:hidden flex justify-between items-center py-4 px-6">
         <button 
             class="text-white focus:outline-none hover:text-[#C5A059] transition-colors" 
             on:click={() => isMenuOpen = !isMenuOpen}
@@ -82,7 +89,7 @@
 
     <!-- Mobile Dropdown -->
     {#if isMenuOpen}
-        <div id="mobile-menu" class="md:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
+        <div id="mobile-menu" class="xl:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
             <button 
                 class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
                 on:click={() => setTab('application')}
@@ -97,6 +104,13 @@
             >
                 RSVP
             </button>-->
+            <button
+            class="nav-btn {activeTab === 'volunteer' ? 'active' : ''}" 
+            on:click={() => setTab('volunteer')}
+            aria-current={activeTab === 'volunteer' ? 'page' : undefined}
+            >
+                Volunteer
+            </button>
             <button 
                 class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
                 on:click={() => setTab('about')}
