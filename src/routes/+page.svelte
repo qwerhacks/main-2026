@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Background from '$lib/components/background.svelte';
 	import Hero from '$lib/components/hero.svelte';
+	import Tracks from '$lib/components/tracks.svelte';
 </script>
 
 <div class="w-full h-full overflow-x-hidden overflow-y-auto overscroll-contain">
@@ -11,6 +12,9 @@
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-screen min-h-screen py-16">
 		<Hero />
+	</div>
+	<div id="content" class="z-10 flex flex-col items-center justify-center w-screen min-h-screen">
+		<Tracks />
 	</div>
 </div>
 

@@ -12,7 +12,7 @@
 		class="text-center font-milonga tracking-wide flex flex-col items-center gap-5 md:gap-6"
 	>
 		<span class="text-6xl md:text-7xl lg:text-8xl text-white qwer-title" style="text-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 3px 8px rgba(34,34,34,0.2);"> ݁₊⊹.QWER Hacks.₊⊹</span>
-		<span class="text-3xl md:text-4xl lg:text-5xl" style="color: #1a1560; opacity: 0.9;">UCLA&nbsp;·&nbsp;Feb 2–4, 2027</span>
+		<span class="text-3xl md:text-4xl lg:text-5xl" style="color: #1a1560; opacity: 0.9;">UCLA&nbsp;·&nbsp;Jan 16–17, 2027</span>
 	</div>
 
 	<div class="flex flex-col items-center gap-4">
