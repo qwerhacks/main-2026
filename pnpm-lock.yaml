@@ -20,7 +20,7 @@ devDependencies:
     specifier: 1.0.0-next.67
     version: 1.0.0-next.67
   '@sveltejs/kit':
-    specifier: 1.0.0-next.429
+    specifier: ^1.0.0-next.429
     version: 1.0.0-next.429(svelte@3.59.2)(vite@3.2.11)
   '@types/google-spreadsheet':
     specifier: ^3.3.0
@@ -2067,6 +2067,7 @@ packages:
   /node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
     dev: true
 
   /node-fetch@2.7.0:
